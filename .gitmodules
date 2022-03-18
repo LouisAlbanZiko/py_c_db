@@ -1,0 +1,12 @@
+[submodule "c_db"]
+	path = _vendor/c_db
+	url = https://github.com/peTheProgrammer/c_db
+[submodule "c_core"]
+	path = _vendor/c_core
+	url = https://github.com/peTheProgrammer/c_core
+[submodule "c_file"]
+	path = _vendor/c_file
+	url = https://github.com/peTheProgrammer/c_file
+[submodule "_vendor/c_log"]
+	path = _vendor/c_log
+	url = https://github.com/peTheProgrammer/c_log

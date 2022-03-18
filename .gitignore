@@ -1,0 +1,11 @@
+Makefile
+*vcxproj*
+*.sln
+build/
+_vendor/
+
+# submodules
+!_vendor/c_core
+!_vendor/c_db
+!_vendor/c_file
+!_vendor/c_log
