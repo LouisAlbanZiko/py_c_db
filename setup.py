@@ -1,20 +1,35 @@
 from distutils.core import setup, Extension
+from xml.etree.ElementInclude import include
 
-module1 = Extension('demo',
-                    define_macros = [('MAJOR_VERSION', '1'),
-                                     ('MINOR_VERSION', '0')],
-                    include_dirs = [],
-                    libraries = ["python39"],
-                    library_dirs = [],
-                    sources = ['src/c_db_module.c'])
+def main():
+    setup(name="py_c_db",
+          version="1.0.0",
+          description="Python interface for c_db library",
+          author="peTheProgrammer",
+          author_email="peTheProgrammer@gmail.com",
+          ext_modules=[
+            Extension(
+                name="py_c_db",
+                sources=[ "src/c_db_module.c" ],
+                include_dirs=[ "_vendor/" ],
+                define_macros=[],
+                undef_macros=[],
+                library_dirs=[
+                    "_vendor/_bin/c_db/Release",
+                    "_vendor/_bin/c_core/Release",
+                    "_vendor/_bin/c_file/Release",
+                    "_vendor/_bin/c_log/Release"
+                ],
+                libraries=[
+                    "python39",
+                    "c_log",
+                    "c_core",
+                    "c_file",
+                    "c_db"
+                ]
+            )
+        ]
+    )
 
-setup (name = 'PackageName',
-       version = '1.0',
-       description = 'This is a demo package',
-       author = 'Pirate Edward',
-       author_email = 'pirateedward1999@gmail.com',
-       url = '',
-       long_description = '''
-This is really just a demo package.
-''',
-       ext_modules = [module1])
+if __name__ == "__main__":
+    main()
