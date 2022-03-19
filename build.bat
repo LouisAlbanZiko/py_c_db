@@ -15,6 +15,7 @@ IF %errorlevel%==0 (
 		echo include "c_db">> project_list.lua
 		echo include "c_log">> project_list.lua
 	)
+	set config=Release
 	CALL build.bat c_db
 	cd ..
 	python setup.py build
