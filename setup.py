@@ -1,5 +1,4 @@
 from distutils.core import setup, Extension
-from xml.etree.ElementInclude import include
 
 def main():
     setup(name="py_c_db",
