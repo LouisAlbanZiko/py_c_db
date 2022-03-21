@@ -149,6 +149,7 @@ static PyObject *py_cd_table_create(PyObject *self, PyObject *args)
 			goto attributes_free;
 		}
 
+		memset(attribute->name, 0, 256);
 		strcpy_s(attribute->name, 256, PyUnicode_AsUTF8(py_name));
 	}
 
