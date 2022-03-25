@@ -9,8 +9,12 @@ def main():
           ext_modules=[
             Extension(
                 name="py_c_db",
-                sources=[ "src/c_db_module.c" ],
-                include_dirs=[ "_vendor/" ],
+                sources=[
+                    "src/py_c_db_database.c",
+                    "src/py_c_db_module.c",
+                    "src/py_c_db_table.c"
+                ],
+                include_dirs=[ "_vendor/", "src/" ],
                 define_macros=[],
                 undef_macros=[],
                 library_dirs=[
